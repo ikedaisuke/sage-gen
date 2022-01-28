@@ -10,3 +10,10 @@ export function addElement () {
     var currentDiv = document.getElementById("div1");
     document.body.insertBefore(newDiv, currentDiv);
 }
+
+export function getParityCheckMatrix () {
+    var currentDiv = document.getElementById('div1');
+    var raw = document.getElementById('parity_check_matrix');
+
+    document.body.insertBefore(raw.value, currentDiv);
+}

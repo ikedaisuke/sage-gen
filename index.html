@@ -4,13 +4,21 @@
         <title>||Working with elements||</title>
     </head>
     <body>
-        <div id="div1">The text above has been created dynamically.</div>
+        <div id="input">
+            <label for="Parity Check matrix">
+                <textarea id="parity_check_matrix"
+                          name="parity_check_matrix"
+                          cols="30" rows="10">
+                </textarea>
+                <input id="input" name="input"
+                       type="button" value="input"/>
+            </label>
+        </div>
         <!--
             JavaScriptのコードはbody要素の最後に書く。
         -->
         <script type="module">
-         import { addElement } from './code.js';
-         document.body.onload = addElement;
+         import { getParityCheckMatrix } from './code.js';
         </script>
     </body>
 </html>
