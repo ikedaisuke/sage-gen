@@ -2,26 +2,19 @@
 <html>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script>
-         $(document).ready(function(){
-             $("button").click(function(){
-                 $("#input").hide();
-             });
-         });
-        </script>
+        <script src="code.js"></script>
         <title>||Working with elements||</title>
     </head>
     <body>
-        <p id="test">Hi there.</p>
-        <button>Hide</button>
+        <p id="test">Hello</p>
+        <button id="btn1">Show</button>
         <div id="input">
             <label for="Parity Check matrix">
                 <textarea id="parity_check_matrix"
                           name="parity_check_matrix"
                           cols="30" rows="10">
                 </textarea>
-                <input id="input" name="input"
-                       type="button" value="input"/>
+                <button id="submit">Submit</button>
             </label>
         </div>
     </body>
