@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $("#btn1").click(function(){
-        alert("Text: " + $("#test").text());
+    $("#submit").click(function(){
+        alert("Text: " + $("#parity_check_matrix").val());
     });
 });
