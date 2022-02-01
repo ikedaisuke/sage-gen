@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $("#submit").click(function(){
-        alert("Text: " + $("#parity_check_matrix").val());
+        var mtx = $("#parity_check_matrix").val().split('\n');
+        alert(mtx);
     });
 });
