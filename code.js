@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    $("#pretty_print").append("Appended text here.");
     $("#submit").click(function(){
         var input = $("#parity_check_matrix").val().split('\n');
         var len = input.length;
@@ -8,5 +7,6 @@ $(document).ready(function(){
             var line = input[index].split(' ');
             matrix.push(line);
         }
+        $("#pretty_print").text(matrix[0]);
     });
 });
