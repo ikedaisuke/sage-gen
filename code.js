@@ -1,13 +1,12 @@
 $(document).ready(function(){
+    $("#pretty_print").append("Appended text here.");
     $("#submit").click(function(){
-        var mtx = $("#parity_check_matrix").val().split('\n');
-        var len = mtx.length;
-        var array = [];
-        // alert(len);
-        for (var i = 0; i < mtx.length; i++) {
-            var row = mtx[i].split(' ');
-            array.push(row);
+        var input = $("#parity_check_matrix").val().split('\n');
+        var len = input.length;
+        var matrix = [];
+        for (var index = 0; index < input.length; index++) {
+            var line = input[index].split(' ');
+            matrix.push(line);
         }
-        alert(array);
     });
 });
