@@ -7,6 +7,8 @@ $(document).ready(function(){
             var line = input[index].split(' ');
             matrix.push(line);
         }
-        $("#pretty_print").text(matrix[0]);
+        var debug = "\\[\\begin{pmatrix}1 & 2 \\\\ 3 & 4\\end{pmatrix}\\]";
+        $("#pretty_print").text(debug);
+        MathJax.Hub.Queue(['Typeset',MathJax.Hub,'pretty_print']);
     });
 });
