@@ -26,7 +26,7 @@ $(document).ready(function(){
         }
         $("#sage").text("R.<");
         $("#sage").append(chars.join(','));
-        $("#sage").append("> = PolynomialRing(QQ, " + (col + 1) + ", order=\'lex\')");
+        $("#sage").append("> = PolynomialRing(QQ, " + (col + 1) + ", order=\'degrevlex\')");
         $("#sage").append(document.createElement("br"));
 
         $("#sage").append("A = matrix([");
