@@ -3,6 +3,7 @@ $(document).ready(function(){
         var input = $("#parity_check_matrix").val().split('\n');
         var len = input.length;
 
+        // 行列表示
         $("#pretty_print").text("\\[\\begin{pmatrix}");
         for (var row = 0; row < input.length; row++) {
             var line = input[row].split(' ');
