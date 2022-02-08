@@ -16,5 +16,14 @@ $(document).ready(function(){
         }
         $("#pretty_print").append("\\end{pmatrix}\\]");
         MathJax.Hub.Queue(['Typeset',MathJax.Hub,'pretty_print']);
+
+        // SageMath 表示
+        var chars = [];
+        for (var i = 0; i < col + 1; i++) {
+            chars.push(String.fromCharCode(i+97));
+        }
+        $("#sage").text("R.<");
+        $("#sage").append(chars.join(','));
+        $("#sage").append("> = PolynomialRing(QQ, " + (col + 1) + ", order=\'lex\')");
     });
 });
