@@ -36,5 +36,9 @@ $(document).ready(function(){
         }
         $("#sage").append(members.join(','));
         $("#sage").append("])");
+        $("#sage").append(document.createElement("br"));
+
+        $("#sage").append("I = ToricIdeal(A, polynomial_ring = R)");
+        $("#sage").append(document.createElement("br"));
     });
 });
