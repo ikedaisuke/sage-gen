@@ -2,13 +2,18 @@ $(document).ready(function(){
     $("#submit").click(function(){
         var input = $("#parity_check_matrix").val().split('\n');
         var len = input.length;
-        var matrix = [];
-        for (var index = 0; index < input.length; index++) {
-            var line = input[index].split(' ');
-            matrix.push(line);
+
+        $("#pretty_print").text("\\[\\begin{pmatrix}");
+        for (var row = 0; row < input.length; row++) {
+            var line = input[row].split(' ');
+            for (var col = 0; col < line.length - 1; col++) {
+                $("#pretty_print").append(line[col]);
+                $("#pretty_print").append("&");
+            }
+            $("#pretty_print").append(line[col]);
+            $("#pretty_print").append("\\\\");
         }
-        var debug = "\\[\\begin{pmatrix}1 & 2 \\\\ 3 & 4\\end{pmatrix}\\]";
-        $("#pretty_print").text(debug);
+        $("#pretty_print").append("\\end{pmatrix}\\]");
         MathJax.Hub.Queue(['Typeset',MathJax.Hub,'pretty_print']);
     });
 });
