@@ -40,5 +40,8 @@ $(document).ready(function(){
 
         $("#sage").append("I = ToricIdeal(A, polynomial_ring = R)");
         $("#sage").append(document.createElement("br"));
+
+        $("#sage").append("I");
+        $("#sage").append(document.createElement("br"));
     });
 });
