@@ -2,6 +2,7 @@ $(document).ready(function(){
     $("#submit").click(function(){
         var input = $("#parity_check_matrix").val().split('\n');
         var len = input.length;
+        var matrix = [];
 
         // 行列表示
         $("#pretty_print").text("\\[\\begin{pmatrix}");
@@ -13,6 +14,7 @@ $(document).ready(function(){
             }
             $("#pretty_print").append(line[col]);
             $("#pretty_print").append("\\\\");
+            matrix.push(line);
         }
         $("#pretty_print").append("\\end{pmatrix}\\]");
         MathJax.Hub.Queue(['Typeset',MathJax.Hub,'pretty_print']);
@@ -25,5 +27,14 @@ $(document).ready(function(){
         $("#sage").text("R.<");
         $("#sage").append(chars.join(','));
         $("#sage").append("> = PolynomialRing(QQ, " + (col + 1) + ", order=\'lex\')");
+        $("#sage").append(document.createElement("br"));
+
+        $("#sage").append("A = matrix([");
+        var members = [];
+        for(let i = 0; i < row; i++) {
+            members.push('[' + matrix[i].join(',') + ']');
+        }
+        $("#sage").append(members.join(','));
+        $("#sage").append("])");
     });
 });
