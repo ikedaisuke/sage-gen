@@ -1,4 +1,7 @@
 $(document).ready(function(){
+    $("#parity_check_matrix").on('focus click', function() {
+        $(this)[0].setSelectionRange(0, 0);
+    });
     $("#submit").click(function(){
         var input = $("#parity_check_matrix").val().split('\n');
         var len = input.length;
