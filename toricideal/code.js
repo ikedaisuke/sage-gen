@@ -7,7 +7,8 @@ $(document).ready(function(){
         // 行列表示
         $("#pretty_print").text("\\[\\begin{pmatrix}");
         for (var row = 0; row < input.length; row++) {
-            var line = input[row].split(' ');
+            var trimmed = input[row].replace(/\s+$/, '');
+            var line = trimmed.split(' ');
             for (var col = 0; col < line.length - 1; col++) {
                 $("#pretty_print").append(line[col]);
                 $("#pretty_print").append("&");
