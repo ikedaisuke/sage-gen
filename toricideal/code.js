@@ -48,4 +48,15 @@ $(document).ready(function(){
         $("#sage").append("I");
         $("#sage").append(document.createElement("br"));
     });
+    $("#copy").click(function(){
+        var code = $("#sage").html()
+            .replace(/<br>/g, '\n')
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>');
+        if (navigator.clipboard == undefined) {
+            window.clipboardData.setData('Text', code);
+        } else {
+            navigator.clipboard.writeText(code);
+        };
+    });
 });
