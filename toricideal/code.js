@@ -50,10 +50,15 @@ $(document).ready(function(){
             .replace(/<br>/g, '\n')
             .replace(/&lt;/g, '<')
             .replace(/&gt;/g, '>');
-        if (navigator.clipboard == undefined) {
+        if (navigator.clipboard != undefined) {
+            navigator.clipboard.writeText(code);
+        } else if (window.clipboardData != undefined) {
             window.clipboardData.setData('Text', code);
         } else {
-            navigator.clipboard.writeText(code);
+            // document.execCommand is obsolete, but
+            // some browsers do not support neither
+            // navigator.clipboard nor window.clipboard
+            document.execCommand('copy');
         };
     });
 });
