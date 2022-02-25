@@ -61,4 +61,19 @@ $(document).ready(function(){
             document.execCommand('copy');
         };
     });
+    function debug() {
+        $("#debug").text("デバッグ");
+        $("#debug").append(document.createElement('br'));
+        if (navigator.clipboard != undefined) {
+            $("#debug").append("navigator.clipboard is supported.");
+        } else if (window.clipboardData != undefined) {
+            $("#debug").append("window.clipboardData is supported.");
+        } else {
+            // document.execCommand is obsolete, but
+            // some browsers do not support neither
+            // navigator.clipboard nor window.clipboard
+            $("#debug").append("unsupported neither navigator.clipboard nor window.clipboardData.");
+        };
+    };
+    debug();
 });
