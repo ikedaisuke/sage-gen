@@ -58,7 +58,9 @@ $(document).ready(function(){
             // document.execCommand is obsolete, but
             // some browsers do not support neither
             // navigator.clipboard nor window.clipboard
-            document.execCommand('copy');
+            var copyText = document.querySelector("#sage");
+            copyText.select();
+            document.execCommand("copy");
         };
     });
     function debug() {
